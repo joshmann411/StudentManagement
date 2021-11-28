@@ -9,8 +9,8 @@ namespace StudentMngt.Interfaces
 {
     public interface IEnrollmenet
     {
-        JsonResult GetEnrollment();
-        JsonResult Enrollment(int EnrollmentId);
+        JsonResult GetEnrollments();
+        JsonResult GetEnrollment(int EnrollmentId);
         JsonResult CreateEnrollment(Enrollment Enrollment);
         JsonResult UpdateEnrollment(Enrollment EnrollmentChanges);
         JsonResult DeleteEnrollment(int EnrollmentId);

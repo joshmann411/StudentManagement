@@ -31,13 +31,13 @@ namespace StudentMngt.Repositories
             return new JsonResult("Deleted Successfully !");
         }
 
-        public JsonResult Enrollment(int EnrollmentId)
+        public JsonResult GetEnrollment(int EnrollmentId)
         {
             _context.Enrollment.Find(EnrollmentId);
             return new JsonResult("Returned Successfully with enrollment Id" + EnrollmentId);
         }
 
-        public JsonResult GetEnrollment()
+        public JsonResult GetEnrollments()
         {
             _context.Enrollment.Find();
             return new JsonResult("Returned Successfully !");
