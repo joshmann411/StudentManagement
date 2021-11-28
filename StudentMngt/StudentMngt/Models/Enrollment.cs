@@ -15,6 +15,6 @@ namespace StudentMngt.Models
         public string QualificationType { get; set; } //enum data (or hard coded from UI)
         public string DateRegistered { get; set; }
         public string GraduationDate { get; set; }
-        public string AverageToDate { get; set; }
+        public double AverageToDate { get; set; }
     }
 }
