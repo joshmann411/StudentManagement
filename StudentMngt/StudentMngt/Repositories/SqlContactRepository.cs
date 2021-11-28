@@ -17,7 +17,7 @@ namespace StudentMngt.Repositories
             _context = context;
 
         }
-        public JsonResult CreateContact(int Contact)
+        public JsonResult CreateContact(Contact Contact)
         {
             _context.Add(Contact);
             _context.SaveChanges();
@@ -37,7 +37,7 @@ namespace StudentMngt.Repositories
             return new JsonResult("Returned Successfully !");
         }
 
-        public JsonResult GetContact(Contact contactId)
+        public JsonResult GetContact(int contactId)
         {
             _context.Contact.Find(contactId);
             return new JsonResult("Returned Successfully with student Id" + contactId);

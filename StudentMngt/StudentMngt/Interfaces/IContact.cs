@@ -10,8 +10,8 @@ namespace StudentMngt.Interfaces
     public interface IContact
     {
         JsonResult GetContacts();
-        JsonResult CreateContact(int Contact);
-        JsonResult GetContact(Contact contactId);
+        JsonResult CreateContact(Contact Contact);
+        JsonResult GetContact(int contactId);
         JsonResult UpdateContact(Contact ContactChange);
         JsonResult DeleteContact(int contactId);
 
