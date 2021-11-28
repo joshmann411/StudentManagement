@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudentMngt.Interfaces
 {
-    public interface IEnrollmenet
+    public interface IEnrollment
     {
         JsonResult GetEnrollments();
         JsonResult GetEnrollment(int EnrollmentId);

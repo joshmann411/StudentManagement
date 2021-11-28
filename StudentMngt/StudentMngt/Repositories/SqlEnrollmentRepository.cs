@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StudentMngt.Repositories
 {
-    public class SqlEnrollmentRepository : IEnrollmenet
+    public class SqlEnrollmentRepository : IEnrollment
     {
         private readonly AppDbContext _context;
 

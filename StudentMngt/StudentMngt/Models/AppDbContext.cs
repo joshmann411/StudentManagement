@@ -31,23 +31,23 @@ namespace StudentMngt.Models
                     ContactTypeId = 1,
                     StudentId = 245
                 });
+
             modelBuilder.Entity<ContactType>().HasData(
                new ContactType
                {
                    ContactTypeId = 1,
                    SelectedType = "email"
                },
-                new ContactType
-                {
-                    ContactTypeId = 2,
-                    SelectedType = "cellphone"
-                },
-                new ContactType
-                {
-                    ContactTypeId = 3,
-                    SelectedType = "Address"
-                }
-                );
+               new ContactType
+               {
+                   ContactTypeId = 2,
+                   SelectedType = "cellphone"
+               },
+               new ContactType
+               {
+                   ContactTypeId = 3,
+                   SelectedType = "Address"
+               });
 
           
             modelBuilder.Entity<Student>().HasData(
@@ -60,6 +60,7 @@ namespace StudentMngt.Models
                    ImagePath = null
 
                });
+
             modelBuilder.Entity<Enrollment>().HasData(
               new Enrollment
               {
