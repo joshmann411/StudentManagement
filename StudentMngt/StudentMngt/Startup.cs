@@ -9,7 +9,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using StudentMngt.Interfaces;
 using StudentMngt.Models;
+using StudentMngt.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -47,7 +49,10 @@ namespace StudentMngt
 
             services.AddControllers();
 
-            //services.AddScoped<IBarber, SqlBarberRepository>();
+            //bind interface to selected implementation
+            services.AddScoped<IStudent, SqlStudentRepository>();
+            services.AddScoped<IContact, SqlContactRepository>();
+            services.AddScoped<IEnrollment, SqlEnrollmentRepository>();
 
             services.AddSwaggerGen(c =>
             {
