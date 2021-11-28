@@ -52,7 +52,7 @@ namespace StudentMngt.Controllers
             {
                 _logger.LogInformation($"Retrieving contact with ID: {id}");
 
-                return new JsonResult(_contact.GetContact(id));
+                return new JsonResult(_contact.GetContact(id).Value);
             }
             catch (Exception ex)
             {
@@ -78,7 +78,7 @@ namespace StudentMngt.Controllers
 
                     _logger.LogInformation("Added Successfully !");
 
-                    return new JsonResult(msg);
+                    return new JsonResult(msg.Value);
                 }
                 catch (Exception ex)
                 {
@@ -104,7 +104,7 @@ namespace StudentMngt.Controllers
 
                 _logger.LogInformation("Updated Successfully");
 
-                return new JsonResult(response);
+                return new JsonResult(response.Value);
             }
             catch (Exception ex)
             {
@@ -126,7 +126,7 @@ namespace StudentMngt.Controllers
 
                 _logger.LogInformation("Deleted Successfully !");
 
-                return new JsonResult(response);
+                return new JsonResult(response.Value);
             }
             catch (Exception ex)
             {
