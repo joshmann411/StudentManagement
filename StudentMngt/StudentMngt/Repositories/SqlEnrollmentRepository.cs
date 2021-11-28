@@ -26,26 +26,31 @@ namespace StudentMngt.Repositories
 
         public JsonResult DeleteEnrollment(int EnrollmentId)
         {
-            _context.Remove(EnrollmentId);
-            _context.SaveChanges();
-            return new JsonResult("Deleted Successfully !");
+            Enrollment enrollment = _context.Enrollments.Find(EnrollmentId);
+
+            if (enrollment != null)
+            {
+                _context.Remove(enrollment);
+                _context.SaveChanges();
+                return new JsonResult("Deleted Successfully !");
+            }
+
+            return new JsonResult("Error Occurred !");
         }
 
         public JsonResult GetEnrollment(int EnrollmentId)
         {
-            _context.Enrollment.Find(EnrollmentId);
-            return new JsonResult("Returned Successfully with enrollment Id" + EnrollmentId);
+            return new JsonResult(_context.Enrollments.Find(EnrollmentId));
         }
 
         public JsonResult GetEnrollments()
         {
-            _context.Enrollment.Find();
-            return new JsonResult("Returned Successfully !");
+            return new JsonResult(_context.Enrollments);
         }
 
         public JsonResult UpdateEnrollment(Enrollment EnrollmentChanges)
         {
-            var contact = _context.Enrollment.Attach(EnrollmentChanges);
+            var contact = _context.Enrollments.Attach(EnrollmentChanges);
             contact.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
 

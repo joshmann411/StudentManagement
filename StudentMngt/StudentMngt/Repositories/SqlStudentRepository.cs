@@ -20,35 +20,38 @@ namespace StudentMngt.Repositories
         }
         public JsonResult CreateStudent(Student student)
         {
-
             _context.Add(student);
             _context.SaveChanges();
             return new JsonResult("Added Successfully !");
-
         }
 
         public JsonResult DeleteStudent(int studentId)
         {
-            _context.Remove(studentId);
-            _context.SaveChanges();
-            return new JsonResult("Deleted Successfully !");
+            Student student = _context.Students.Find(studentId);
+
+            if (student != null)
+            {
+                _context.Remove(student);
+                _context.SaveChanges();
+                return new JsonResult("Deleted Successfully !");
+            }
+
+            return new JsonResult("Error Occurred !");
         }
 
         public JsonResult GetStudents()
         {
-            _context.Student.Find();
-            return new JsonResult("Returned Successfully !");
+            return new JsonResult(_context.Students);
         }
 
         public JsonResult GetStudent(int studentId)
         {
-            _context.Student.Find(studentId);
-            return new JsonResult("Returned Successfully with student Id" + studentId);
+            return new JsonResult(_context.Students.Find(studentId));
         }
 
         public JsonResult UpdateStudent(Student studentChanges)
         {
-            var contact = _context.Student.Attach(studentChanges);
+            var contact = _context.Students.Attach(studentChanges);
             contact.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
 

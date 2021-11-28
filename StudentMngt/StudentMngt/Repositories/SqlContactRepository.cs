@@ -26,26 +26,31 @@ namespace StudentMngt.Repositories
 
         public JsonResult DeleteContact(int contactId)
         {
-            _context.Remove(contactId);
-            _context.SaveChanges();
-            return new JsonResult("Deleted Successfully !");
+            Contact contact = _context.Contacts.Find(contactId);
+
+            if (contact != null)
+            {
+                _context.Remove(contactId);
+                _context.SaveChanges();
+                return new JsonResult("Deleted Successfully !");
+            }
+
+            return new JsonResult("Error Occurred !");
         }
 
         public JsonResult GetContacts()
         {
-            _context.Student.Find();
-            return new JsonResult("Returned Successfully !");
+            return new JsonResult(_context.Contacts);
         }
 
         public JsonResult GetContact(int contactId)
         {
-            _context.Contact.Find(contactId);
-            return new JsonResult("Returned Successfully with student Id" + contactId);
+            return new JsonResult(_context.Contacts.Find(contactId));
         }
 
         public JsonResult UpdateContact(Contact ContactChange)
         {
-            var contact = _context.Contact.Attach(ContactChange);
+            var contact = _context.Contacts.Attach(ContactChange);
             contact.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
 

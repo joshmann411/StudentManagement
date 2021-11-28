@@ -13,10 +13,10 @@ namespace StudentMngt.Models
         {
 
         }
-        public DbSet<Contact> Contact{get;set;}
-        public DbSet<ContactType> ContactType { get; set; }
-        public DbSet<Enrollment> Enrollment { get; set; }
-        public DbSet<Student> Student { get; set; }
+        public DbSet<Contact> Contacts {get;set;}
+        public DbSet<ContactType> ContactTypes { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Student> Students { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

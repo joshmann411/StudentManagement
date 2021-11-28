@@ -32,7 +32,7 @@ namespace StudentMngt.Controllers
             {
                 _logger.LogInformation("Retrieving list of known enrollments");
 
-                return new JsonResult(_enrollment.GetEnrollments());
+                return new JsonResult(_enrollment.GetEnrollments().Value);
             }
             catch (Exception ex)
             {
