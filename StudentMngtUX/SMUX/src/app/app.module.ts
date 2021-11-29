@@ -14,6 +14,8 @@ import { CommonModule } from '@angular/common';
 import { LayoutFullModule } from './layouts/layout-full/layout-full.module';
 import { LayoutSideModule } from './layouts/layout-side/layout-side.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ShowDashboardComponent } from './pages/dashboard/show-dashboard/show-dashboard.component';
+import { AddEditDashboardComponent } from './pages/dashboard/add-edit-dashboard/add-edit-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AuthComponent,
     DashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShowDashboardComponent,
+    AddEditDashboardComponent
   ],
   imports: [
     BrowserModule,
