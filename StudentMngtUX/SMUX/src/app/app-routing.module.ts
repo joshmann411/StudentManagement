@@ -14,7 +14,7 @@ const routes: Routes = [
     //a layout without a sidebar
     component: LayoutFullComponent,
     children: [
-      {path: 'home', component: HomeComponent},
+      {path: '', component: HomeComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
       // {path: 'reset-password', component: ResetPasswordComponent},
