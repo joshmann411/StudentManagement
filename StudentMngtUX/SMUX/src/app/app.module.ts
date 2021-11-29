@@ -4,29 +4,35 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './shared/services/auth/auth.component';
-import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { LayoutFullComponent } from './layouts/layout-full/layout-full.component';
-import { LayoutSideComponent } from './layouts/layout-side/layout-side.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { SharedModule } from './shared/shared/shared.module';
+import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { LayoutFullModule } from './layouts/layout-full/layout-full.module';
+import { LayoutSideModule } from './layouts/layout-side/layout-side.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    HomeComponent,
     DashboardComponent,
-    LayoutFullComponent,
-    LayoutSideComponent,
     LoginComponent,
     RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    RouterModule,
+    CommonModule,
+    LayoutFullModule,
+    LayoutSideModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

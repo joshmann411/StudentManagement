@@ -14,32 +14,29 @@ const routes: Routes = [
     //a layout without a sidebar
     component: LayoutFullComponent,
     children: [
-      {
-        path: '',
-        component: HomeComponent,
-      },
+      {path: 'home', component: HomeComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
       // {path: 'reset-password', component: ResetPasswordComponent},
       {path: 'dashboard', component: DashboardComponent}
     ],
   },
-  {
-    path: '',
-    component: LayoutSideComponent,
-    children: [
-      {
-        //add routes here when you want
-        // a layout with a sidebar
-        // path: 'row-examples',
-        // component: RowExampleComponent,
-      },
-      {
-        // path: 'col-examples',
-        // component: ColExampleComponent,
-      }
-    ],
-  },
+  // {
+  //   path: '',
+  //   component: LayoutSideComponent,
+  //   children: [
+  //     {
+  //       //add routes here when you want
+  //       // a layout with a sidebar
+  //       // path: 'row-examples',
+  //       // component: RowExampleComponent,
+  //     },
+  //     {
+  //       // path: 'col-examples',
+  //       // component: ColExampleComponent,
+  //     }
+  //   ],
+  // },
 ];
 
 @NgModule({
