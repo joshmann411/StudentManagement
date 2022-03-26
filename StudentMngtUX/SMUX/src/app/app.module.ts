@@ -7,7 +7,6 @@ import { AuthComponent } from './shared/services/auth/auth.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -16,6 +15,7 @@ import { LayoutSideModule } from './layouts/layout-side/layout-side.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ShowDashboardComponent } from './pages/dashboard/show-dashboard/show-dashboard.component';
 import { AddEditDashboardComponent } from './pages/dashboard/add-edit-dashboard/add-edit-dashboard.component';
+import { StudentFilterPipe } from './pages/dashboard/show-dashboard/student-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,12 +25,12 @@ import { AddEditDashboardComponent } from './pages/dashboard/add-edit-dashboard/
     LoginComponent,
     RegisterComponent,
     ShowDashboardComponent,
-    AddEditDashboardComponent
+    AddEditDashboardComponent,
+    StudentFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     BrowserAnimationsModule,
     RouterModule,
     CommonModule,

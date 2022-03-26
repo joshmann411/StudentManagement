@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-add-edit-dashboard',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-edit-dashboard.component.css']
 })
 export class AddEditDashboardComponent implements OnInit {
+
+  @Input() student:any;
+  @Input() detail:any;
 
   constructor() { }
 

@@ -23,4 +23,8 @@ export class StudentService {
       this.apiUrl + 'Student/Get'
     );
   }
+
+  deleteStudent(id: any){
+    return this.http.delete(this.apiUrl + 'Student/delete/' + id);
+  }
 }
